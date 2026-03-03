@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>WhatsApp Auto Sender</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 500px;
+        }
+        h1 {
+            text-align: center;
+            color: #25D366;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: 600;
+            color: #333;
+        }
+        input, textarea {
+            width: 10 %;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        input[type="number"] {
+            width: 100%;
+        }
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #25D366;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #1da853;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>WhatsApp Auto Sender</h1>
+        <form action="/start" method="POST">
+            <label for="phone">Phone Number (with country code, e.g. 918374335934)</label>
+            <input type="text" id="phone" name="phone" required placeholder="918374335934">
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="Enter your message..."></textarea>
+
+            <label for="duration">Duration (hours)</label>
+            <input type="number" id="duration" name="duration" min="1" max="24" required value="1">
+
+            <label for="interval">Interval (minutes)</label>
+            <input type="number" id="interval" name="interval" min="1" max="60" required value="10">
+
+            <button type="submit">Start Sending</button>
+        </form>
+    </div>
+</body>
+</html>
