@@ -1,106 +1,87 @@
-📲 WhatsApp Auto Message Sender
+# WhatsApp Auto Message Sender
 
-An automated WhatsApp message sender built using Python and Selenium that allows users to send scheduled or instant messages directly through WhatsApp Web.
+This project sends WhatsApp messages automatically using Python and Selenium.
+It works through WhatsApp Web without using any official API.
 
-🚀 Features
+---
 
-✅ Send messages automatically
+## Features
 
-✅ Send to saved contacts
+* Send messages automatically
+* Send to saved contacts
+* Custom message support
+* Optional scheduling
+* Uses WhatsApp Web
+* Simple and lightweight
 
-✅ Custom message support
+---
 
-✅ Schedule messages
+## Tech Stack
 
-✅ Uses WhatsApp Web (no API required)
+* Python
+* Selenium
+* ChromeDriver
+* pywhatkit (optional)
 
-✅ Lightweight and easy to use
+---
 
-🛠 Tech Stack
+## Project Structure
 
-Python
+* main.py
+* requirements.txt
+* README.md
+* driver/
 
-Selenium
+---
 
-WebDriver (ChromeDriver)
+## Installation
 
-pywhatkit (optional alternative method)
-
-📂 Project Structure
-whatsapp-auto-send/
-│
-├── main.py
-├── requirements.txt
-├── README.md
-└── driver/
-    └── chromedriver.exe
-⚙️ Installation
-
-1️⃣ Clone the repository
+Clone the repository:
 
 git clone https://github.com/yourusername/whatsapp-auto-send.git
+
+Go to the folder:
+
 cd whatsapp-auto-send
 
-2️⃣ Install dependencies
+Install dependencies:
 
 pip install -r requirements.txt
 
-3️⃣ Download ChromeDriver
-Make sure ChromeDriver version matches your Chrome browser version.
+Download ChromeDriver matching your browser version.
 
-▶️ Usage
+---
+
+## Usage
 
 Run the script:
 
 python main.py
 
-The script will:
+* WhatsApp Web will open
+* Scan the QR code
+* Message will be sent automatically
 
-Open WhatsApp Web
+---
 
-Ask you to scan QR code
+## Example
 
-Automatically send your message
+* Enter contact name
+* Enter message
+* Script sends message using WhatsApp Web
 
-💻 Example Code Snippet
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-import time
+---
 
-driver = webdriver.Chrome()
-driver.get("https://web.whatsapp.com")
-time.sleep(20)
+## Disclaimer
 
-contact = "Contact Name"
-message = "Hello, this is an automated message!"
+This project is for learning purposes only.
+Avoid excessive automation as it may violate WhatsApp policies.
 
-search_box = driver.find_element(By.XPATH, '//div[@title="Search input textbox"]')
-search_box.send_keys(contact)
-time.sleep(3)
+---
 
-contact_click = driver.find_element(By.XPATH, f'//span[@title="{contact}"]')
-contact_click.click()
+## Future Improvements
 
-msg_box = driver.find_element(By.XPATH, '//div[@title="Type a message"]')
-msg_box.send_keys(message)
-msg_box.send_keys("\n")
-⚠️ Disclaimer
-
-This project is for educational purposes only.
-Excessive automation may violate WhatsApp’s terms of service.
-
-📌 Future Improvements
-
-📅 Advanced scheduler
-
-📊 Message logging system
-
-👥 Bulk message support
-
-🧠 GUI interface
-
-👨‍💻 Author
-
-Prashanth
-BCA Student | Aspiring Data Scientist
-Passionate about automation & AI
+* Add scheduler
+* Message logs
+* Bulk messaging
+* Simple GUI
